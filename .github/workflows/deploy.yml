@@ -1,0 +1,22 @@
+name: aws cred test
+description: reproducing issue
+
+
+on:
+  push
+
+jobs:
+  foo:
+    permissions:
+      id-token: write
+      contents: read
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::565371312234:role/github-action-for-infra
+          role-session-name: foo-bar
+          aws-region: us-east-1
