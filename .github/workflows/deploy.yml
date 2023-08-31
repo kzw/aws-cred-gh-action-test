@@ -12,10 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     steps:
-      - uses: actions/checkout@v3
+      - uses: ./.github/actions/dep
 
-      - uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: arn:aws:iam::565371312234:role/github-action-for-infra
-          role-session-name: foo-bar
-          aws-region: us-east-1
