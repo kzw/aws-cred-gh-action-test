@@ -1,6 +1,4 @@
 name: aws cred test
-description: reproducing issue
-
 
 on:
   push
